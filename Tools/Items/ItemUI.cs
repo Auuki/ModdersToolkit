@@ -146,6 +146,11 @@ namespace ModdersToolkit.Tools.Items
 			data.DataGetter = () => Main.LocalPlayer.HeldItem.reuseDelay;
 			data.DataSetter = (value) => Main.LocalPlayer.HeldItem.reuseDelay = value;
 			uiRanges.Add(new UIRange<int>(data));
+			
+			data = new UIIntRangedDataValue("Knockback:", 2, 2, 80);
+			data.DataGetter = () => Main.LocalPlayer.HeldItem.knockback;
+			data.DataSetter = (value) => Main.LocalPlayer.HeldItem.knockback = value;
+			uiRanges.Add(new UIRange<int>(data));
 
 			data = new UIIntRangedDataValue("Pick:", 0, 0, 300);
 			data.DataGetter = () => Main.LocalPlayer.HeldItem.pick;
