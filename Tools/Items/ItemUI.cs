@@ -147,6 +147,16 @@ namespace ModdersToolkit.Tools.Items
 			data.DataSetter = (value) => Main.LocalPlayer.HeldItem.reuseDelay = value;
 			uiRanges.Add(new UIRange<int>(data));
 
+			var dataf = new UIFloatRangedDataValue("Knockback:", 0f, 0f, 80f);
+			dataf.DataGetter = () => Main.LocalPlayer.HeldItem.knockBack;
+			dataf.DataSetter = (value) => Main.LocalPlayer.HeldItem.knockBack = value;
+			uiRanges.Add(new UIRange<float>(dataf));
+
+			dataf = new UIFloatRangedDataValue("Velocity:", 0f, 0f, 80f);
+			dataf.DataGetter = () => Main.LocalPlayer.HeldItem.shootSpeed;
+			dataf.DataSetter = (value) => Main.LocalPlayer.HeldItem.shootSpeed = value;
+			uiRanges.Add(new UIRange<float>(dataf));
+
 			data = new UIIntRangedDataValue("Pick:", 0, 0, 300);
 			data.DataGetter = () => Main.LocalPlayer.HeldItem.pick;
 			data.DataSetter = (value) => Main.LocalPlayer.HeldItem.pick = value;
